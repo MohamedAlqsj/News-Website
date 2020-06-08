@@ -38,7 +38,7 @@
                 <nav class="classy-navbar justify-content-between" id="viralnewsNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="{{asset('front/img/core-img/logo.png')}}" alt="Logo"></a>
+                    <a class="nav-brand" href="{{route('homepage')}}"><img src="{{asset('front/img/core-img/logo.png')}}" alt="Logo"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
