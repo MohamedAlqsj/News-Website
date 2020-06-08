@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
         $top_viewed = Post::with(['user', 'comments'])->where('status', 1)->orderBy('view_count', 'DESC')->limit(2)->get();
 
         $most_commented = Post::withCount('comments')->where('status', 1)->orderBy('comments_count', 'DESC')->limit(5)->get();
-        $comments = Comment::where('status', 1)->orderBy('id', 'DESC')->get();
+        $comments = Comment::where('status', 1)->orderBy('id', 'DESC')->limit(4)->get();
 
         $shareData = array(
         'system_name' => $system_name,

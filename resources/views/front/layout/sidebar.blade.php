@@ -49,8 +49,6 @@
             <h4>Latest Comments</h4>
 
             @foreach ($shareData['comments'] as $comment)
-
-            @endforeach
             <!-- Single Comment Widget -->
             <div class="single-comments d-flex">
                 <div class="comments-thumbnail">
@@ -61,6 +59,8 @@
                     <p>{{ date('F j,Y',strtotime( $comment->created_at )) }}</p>
                 </div>
             </div>
+
+            @endforeach
 
 
         </div>
