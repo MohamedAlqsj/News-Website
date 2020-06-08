@@ -61,6 +61,8 @@
                                 @endforeach
                             </ul>
 
+
+
                             <!-- Search Button -->
                             <div class="search-btn">
                                 <i id="searchbtn" class="fa fa-search" aria-hidden="true"></i>
@@ -72,6 +74,11 @@
                                     <input type="text" name="search-terms" placeholder="Enter your keywords ...">
                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
+                            </div>
+
+                            <!-- Video Post Button -->
+                            <div class="add-post-button">
+                                <a href=" {{ url('/login') }} " class="btn add-post-btn">Login</a>
                             </div>
 
 
