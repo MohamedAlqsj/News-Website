@@ -14,18 +14,9 @@
                     <!-- Footer Nav -->
                     <div class="footer-nav">
                         <ul>
-                            <li class="active"><a href="#">Top 10</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Funny</a></li>
-                            <li><a href="#">Advertising</a></li>
-                            <li><a href="#">Celebs</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Videos</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Submit a video</a></li>
-                            <li><a href="#">Don’tMiss</a></li>
-                            <li><a href="#">Contact</a></li>
+                            @foreach($shareData['categories'] as $category)
+                            <li><a href="{{ url('/category') }}/{{ $category->id }}">{{ $category->name }}</a></li>
+                        @endforeach
                         </ul>
                     </div>
                 </div>
@@ -47,52 +38,28 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="footer-widget-area">
                     <!-- Widget Title -->
-                    <h4 class="widget-title">Latest articles</h4>
+                    <h4 class="widget-title">Most viewed articles</h4>
 
+                    @foreach ($shareData['top_viewed'] as $item)
                     <!-- Single Latest Post -->
                     <div class="single-blog-post style-2 d-flex align-items-center">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/4.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                            </div>
-                        </div>
+                        <!-- Post Thumb -->
+              <div class="post-thumb">
+                  <a href="{{ url('/details') }}/{{ $item->slug }}"><img src="{{ asset('uploads/post') }}/{{ $item->main_image }}"  alt="{{ $item->title }}"></a>
+              </div>
+              <!-- Post Data -->
+              <div class="post-data">
+                  <a  href="{{ url('/details') }}/{{ $item->slug }}" class="post-title">
+                      <h6>{{$item->title}}</h6>
+                  </a>
+                  <div class="post-meta">
+                      <p class="post-author">By <a href="{{ url('/author') }}/{{ $item->user->id }}">{{$item->user->name}}</a></p>
+                  </div>
+              </div>
                     </div>
 
-                    <!-- Single Latest Post -->
-                    <div class="single-blog-post style-2 d-flex align-items-center">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/5.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Sed a elit euismod augue semper congue sit amet ac.</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
-                    <!-- Single Latest Post -->
-                    <div class="single-blog-post style-2 d-flex align-items-center">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/6.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
