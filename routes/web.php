@@ -31,7 +31,7 @@ Route::get('/category/{id}', 'ListingPageController@listing1');
 Route::get('/author/{id}', 'ListingPageController@listing');
 // Route::get('/listing', 'ListingPageController@index');
 Route::get('/details/{slug}', 'SinglePageController@index')->name('details');
-Route::post('/comments', 'SinglePageController@comment');
+Route::post('/comments', 'SinglePageController@comment')->name('postcomment.store');
 
 //Backend control panel
 Route::group(['prefix' => 'back', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {

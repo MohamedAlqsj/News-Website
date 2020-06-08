@@ -34,6 +34,7 @@
 <!-- ##### Blog Area Start ##### -->
 <div class="blog-area section-padding-100">
     <div class="container">
+        @include('partials.messages')
         <div class="row">
             <div class="col-12 col-lg-8">
                 <div class="blog-posts-area">
@@ -140,20 +141,18 @@
 
                         <!-- Reply Form -->
                         <div class="contact-form-area">
-                            <form action="#" method="post">
+                            <form action="{{route('postcomment.store')}}" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-12 col-lg-6">
-                                        <input type="text" class="form-control" id="name" placeholder="Name*">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name*">
                                     </div>
-                                    <div class="col-12 col-lg-6">
-                                        <input type="email" class="form-control" id="email" placeholder="Email*">
-                                    </div>
+
                                     <div class="col-12">
-                                        <input type="text" class="form-control" id="subject" placeholder="Website">
+                                        <textarea  class="form-control" name="comment" id="comment" cols="30" rows="10" placeholder="Message"></textarea>
                                     </div>
-                                    <div class="col-12">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                    </div>
+
+                                    <input type="hidden" name="post_id" value="{{$post->id}}">
                                     <div class="col-12">
                                         <button class="btn viral-btn mt-30" type="submit">Submit Comment</button>
                                     </div>
