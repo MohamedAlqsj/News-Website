@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "bheller/images-generator": "^1.0",
+        "bluemmb/faker-picsum-photos-provider": "^1.0",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
         "laravel/framework": "^6.11",
@@ -20,6 +22,7 @@
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.1",
+        "mmo/faker-images": "^0.1.0",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0"
@@ -38,6 +41,11 @@
         "psr-4": {
             "App\\": "app/"
         },
+        "files": [
+
+            "app/helpers.php"
+
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"
